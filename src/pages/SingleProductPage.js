@@ -28,7 +28,7 @@ const SingleProductPage = () => {
     if (error) {
       setTimeout(() => {
         history.push("/");
-      }, 3000);
+      }, 2000);
     }
     //eslint-disable-next-line
   }, [error]);
