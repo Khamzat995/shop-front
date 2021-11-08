@@ -3,14 +3,15 @@ import styled from "styled-components";
 import { formatPrice } from "../utils/helpers";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
-// import products_reducer from "../reducers/products_reducer";
+//import products_reducer from "../reducers/products_reducer";
 
-const Product = ({ image, name, price, id }) => {
+const Product = ({ images, name, price, id }) => {
+
   return (
     <Wrapper>
       <Link to={`/products/${id}`}>
         <div className="container">
-          <img src={image} alt={name} />
+          <img src={images} alt={name} />
           <Link to={`/products/${id}`} className="link">
             <FaSearch />
           </Link>

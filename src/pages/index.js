@@ -8,6 +8,7 @@ import Checkout from "./CheckoutPage";
 import PrivateRoute from "./PrivateRoute";
 import AuthWrapper from "./AuthWrapper";
 
+
 export {
   Home,
   Products,
@@ -18,4 +19,5 @@ export {
   Checkout,
   PrivateRoute,
   AuthWrapper,
+
 };
