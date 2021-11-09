@@ -34,7 +34,8 @@ const SingleProductPage = () => {
   }, [error]);
 
   useEffect(() => {
-    fetchSingleProduct(`${url}${id}`);
+ // fetchSingleProduct(`${url}${id}`);
+  fetchSingleProduct(id, url);
     //eslint-disable-next-line
   }, [id]);
   if (loading) {

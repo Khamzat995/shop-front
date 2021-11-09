@@ -5,14 +5,14 @@ import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 //import products_reducer from "../reducers/products_reducer";
 
-const Product = ({ images, name, price, id }) => {
+const Product = ({ images, name, price, _id }) => {
 
   return (
     <Wrapper>
-      <Link to={`/products/${id}`}>
+      <Link to={`/products/${_id}`}>
         <div className="container">
           <img src={images[0].url} alt={name} />
-          <Link to={`/products/${id}`} className="link">
+          <Link to={`/products/${_id}`} className="link">
             <FaSearch />
           </Link>
         </div>
