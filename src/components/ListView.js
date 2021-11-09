@@ -6,15 +6,15 @@ const ListView = ({ products }) => {
   return (
     <Wrapper>
       {products.map((product) => {
-        const { id, images, name, price, description } = product;
+        const { _id, images, name, price, description } = product;
         return (
-          <article key={id}>
+          <article key={_id}>
             <img src={images[0].url} alt={name} />
             <div>
               <h4>{name}</h4>
               <h5 className="price">{formatPrice(price)}</h5>
               <p>{description.substring(0, 150)}...</p>
-              <Link to={`/products/${id}`} className="btn">
+              <Link to={`/products/${_id}`} className="btn">
                 Подробности
               </Link>
             </div>
@@ -32,12 +32,19 @@ const Wrapper = styled.section`
   img {
     width: 100%;
     display: block;
-    width: 300px;
     height: 200px;
     object-fit: cover;
     border-radius: var(--radius-rounded);
     margin-bottom: 1rem;
   }
+  article {
+    transition: all 0.5s;  
+  }
+  
+  article:hover{
+    transform: scale(1.1);
+  }
+  
   h4 {
     margin-bottom: 0.5rem;
   }
@@ -53,6 +60,10 @@ const Wrapper = styled.section`
     font-size: 0.5rem;
     padding: 0.25rem 0.5rem;
   }
+  .btn:hover{
+    transform: scale(1.1);
+  }
+
   @media (min-width: 992px) {
     article {
       display: grid;
