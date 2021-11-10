@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
-import { single_product_url as url } from "../utils/constants";
 import { formatPrice } from "../utils/helpers";
 import {
   Loading,
@@ -15,7 +14,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const SingleProductPage = () => {
-  const { _id } = useParams();
+  const { id } = useParams();
   const history = useHistory();
   const {
     single_product_loading: loading,
@@ -35,9 +34,9 @@ const SingleProductPage = () => {
 
   useEffect(() => {
  // fetchSingleProduct(`${url}${id}`);
-  fetchSingleProduct(_id, url);
+  fetchSingleProduct(id);
     //eslint-disable-next-line
-  }, [_id]);
+  }, [id]);
   if (loading) {
     return <Loading />;
   }
@@ -73,7 +72,7 @@ const SingleProductPage = () => {
             <p className="desc">{description}</p>
             <p className="info">
               <span>Доступно :</span>
-              {stock > 0 ? "In stock" : "Out of stock"}
+              {stock > 0 ? "есть в наличии" : "нет в наличии"}
             </p>
             <p className="info">
               <span>артикул :</span>

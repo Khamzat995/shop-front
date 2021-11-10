@@ -50,4 +50,4 @@ export const services = [
 export const products_url = 'http://localhost:3051/products'
 
 // export const single_product_url = `https://course-api.com/react-store-single-product?id=`
- export const single_product_url = `http://localhost:3051/products/?:id`
+ export const single_product_url = `http://localhost:3051/products/`
