@@ -15,7 +15,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const SingleProductPage = () => {
-  const { id } = useParams();
+  const { _id } = useParams();
   const history = useHistory();
   const {
     single_product_loading: loading,
@@ -35,9 +35,9 @@ const SingleProductPage = () => {
 
   useEffect(() => {
  // fetchSingleProduct(`${url}${id}`);
-  fetchSingleProduct(id, url);
+  fetchSingleProduct(_id, url);
     //eslint-disable-next-line
-  }, [id]);
+  }, [_id]);
   if (loading) {
     return <Loading />;
   }
@@ -51,7 +51,7 @@ const SingleProductPage = () => {
     stock,
     stars,
     reviews,
-    id: sku,
+    _id: sku,
     company,
     images,
   } = product;
